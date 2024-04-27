@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Doctor</title>
+</head>
+<body>
+    <h1>{{ doctor.name }}</h1>
+    <p><strong>Specialization:</strong> {{ doctor.specialization }}</p>
+    <a href="{% url 'update_doctor' pk=doctor.pk %}">Edit</a>
+    <a href="{% url 'delete_doctor' pk=doctor.pk %}">Delete</a>
+    <a href="{% url 'doctor_list' %}">Back to List</a>
+</body>
+</html>

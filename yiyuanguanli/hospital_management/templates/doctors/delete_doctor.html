@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>删除医生</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>删除医生</h2>
+        <p>你确定要删除 {{ doctor.name }} 医生吗？</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">删除</button>
+        </form>
+    </div>
+</body>
+</html>

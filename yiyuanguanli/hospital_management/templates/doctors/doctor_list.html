@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>医生列表</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>医生列表</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>科室</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doctor in doctors %}
+                <tr>
+                    <td>{{ doctor.id }}</td>
+                    <td>{{ doctor.name }}</td>
+                    <td>{{ doctor.department }}</td>
+                    <td>
+                        <a href="{% url 'update_doctor' doctor.id %}" class="btn btn-info">编辑</a>
+                        <a href="{% url 'delete_doctor' doctor.id %}" class="btn btn-danger">删除</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

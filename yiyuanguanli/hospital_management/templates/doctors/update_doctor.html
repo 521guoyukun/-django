@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>更新医生信息</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>更新医生信息</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ doctor.name }}">
+            </div>
+            <div class="form-group">
+                <label for="department">科室</label>
+                <input type="text" class="form-control" id="department" name="department" value="{{ doctor.department }}">
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+        </form>
+    </div>
+</body>
+</html>
